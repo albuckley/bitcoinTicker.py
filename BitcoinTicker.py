@@ -10,6 +10,10 @@ def btcChina():
 	data = json_to_dict(get_URL('https://data.btcchina.com/data/ticker'))
 	return data['ticker']['last']
 
+def OKCoin():
+	data = json_to_dict(get_URL('https://www.okcoin.com/api/ticker.do'))
+	return data['ticker']['last']
+
 def bitfinex():
 	data = json_to_dict(get_URL('https://api.bitfinex.com/v1/ticker/btcusd'))
 	return data['last_price']
@@ -41,6 +45,10 @@ def kraken():
 	data = json_to_dict(get_URL('https://api.kraken.com/0/public/Ticker?pair=XBTUSD'))
 	return data['result']['XXBTZUSD']['c'][0]
 
+def crypto_trade():
+	data = json_to_dict(get_URL('https://crypto-trade.com/api/1/ticker/btc_usd'))
+	return data['data']['last']
+
 def CoinMKT():
 	# Their API endpoint is not yet public.
 	return "Coming Soon."
@@ -57,14 +65,22 @@ def json_to_dict(my_json):
     return json.loads(my_json)
 
 
+#https://www.okcoin.com/api/ticker.do?symbol=ltc_cny    http://bter.com/api#ticker
+#https://www.cryptsy.com/pages/api
+# https://vircurex.com/welcome/api?locale=en
+#http://api.virwox.com/api/documentation/Basic_API.pdf
+#https://blockchain.info/api/exchange_rates_api
+
 ##### EXAMPLE #######
 print "Coindesk Bitcoin Price Index: " + coindeskBPI()
 print "Bitfinex Last Price: " + bitfinex()
 print "CoinBase Last Price: " + coinbase()
 print "Mt.Gox Last Price: " + mtGox()
 print "BTCE Last Price: " + str( btce() )
+print "Crypto Trade Last Price: " + str( crypto_trade() )
 print "BitStamp Last Price: " + bitStamp()
 print "CampBX Last Price: " + campBX()
 print "Kraken Last Price: " + kraken()
 print "BTC China Last Price (Yuan): " + btcChina()
+print "OK Coin Last Price (Yuan): " + btcChina()
 print "CoinMKT Last Price: " + CoinMKT()
