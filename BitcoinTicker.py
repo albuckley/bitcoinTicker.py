@@ -54,6 +54,7 @@ def CoinMKT():
 	return "Coming Soon."
 
 def get_URL(url):
+	#need to set a timeout
     try:
     	request = urllib2.Request(url, headers={'User-Agent' : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36"}) 
         result = urllib2.urlopen(request)
@@ -70,6 +71,7 @@ def json_to_dict(my_json):
 # https://vircurex.com/welcome/api?locale=en
 #http://api.virwox.com/api/documentation/Basic_API.pdf
 #https://blockchain.info/api/exchange_rates_api
+#https://cex.io/api/ticker/LTC/BTC 
 
 ##### EXAMPLE #######
 print "Coindesk Bitcoin Price Index: " + coindeskBPI()
