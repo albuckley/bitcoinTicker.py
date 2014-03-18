@@ -29,7 +29,7 @@ def mtGox():
 
 def btce():
 	data = json_to_dict(get_URL('https://btc-e.com/api/2/btc_usd/ticker'))
-	return data['ticker']['last']
+	return str(data['ticker']['last'])
 
 def bitStamp():
 	data = json_to_dict(get_URL('https://www.bitstamp.net/api/ticker/'))
@@ -47,7 +47,7 @@ def kraken():
 
 def crypto_trade():
 	data = json_to_dict(get_URL('https://crypto-trade.com/api/1/ticker/btc_usd'))
-	return data['data']['last']
+	return str(data['data']['last'])
 
 def CoinMKT():
 	# Their API endpoint is not yet public.
@@ -73,16 +73,4 @@ def json_to_dict(my_json):
 #https://blockchain.info/api/exchange_rates_api
 #https://cex.io/api/ticker/LTC/BTC 
 
-##### EXAMPLE #######
-print "Coindesk Bitcoin Price Index: " + coindeskBPI()
-print "Bitfinex Last Price: " + bitfinex()
-print "CoinBase Last Price: " + coinbase()
-print "Mt.Gox Last Price: " + mtGox()
-print "BTCE Last Price: " + str( btce() )
-print "Crypto Trade Last Price: " + str( crypto_trade() )
-print "BitStamp Last Price: " + bitStamp()
-print "CampBX Last Price: " + campBX()
-print "Kraken Last Price: " + kraken()
-print "BTC China Last Price (Yuan): " + btcChina()
-print "OK Coin Last Price (Yuan): " + btcChina()
-print "CoinMKT Last Price: " + CoinMKT()
+
