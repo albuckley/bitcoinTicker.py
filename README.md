@@ -21,8 +21,8 @@ Each of the following functions returns a string with the latest USD or Yuan (no
 * bitStamp()
 * campBX()
 * kraken()
-* OKCoin()
-* btcChina()
+* OKCoin() NOTE: returns Yuan value. 
+* btcChina() NOTE: returns Yuan value. 
 
 
 ## Usage:
