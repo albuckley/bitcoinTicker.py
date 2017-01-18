@@ -23,10 +23,6 @@ def coinbase():
 	data = json_to_dict(get_URL('https://coinbase.com/api/v1/currencies/exchange_rates'))
 	return data['btc_to_usd']
 
-def mtGox():
-	data = json_to_dict(get_URL('http://data.mtgox.com/api/2/BTCUSD/money/ticker_fast'))
-	return data['data']['last']['value']
-
 def btce():
 	data = json_to_dict(get_URL('https://btc-e.com/api/2/btc_usd/ticker'))
 	return str(data['ticker']['last'])
@@ -44,14 +40,6 @@ def campBX():
 def kraken():
 	data = json_to_dict(get_URL('https://api.kraken.com/0/public/Ticker?pair=XBTUSD'))
 	return data['result']['XXBTZUSD']['c'][0]
-
-def crypto_trade():
-	data = json_to_dict(get_URL('https://crypto-trade.com/api/1/ticker/btc_usd'))
-	return str(data['data']['last'])
-
-def CoinMKT():
-	# Their API endpoint is not yet public.
-	return "Coming Soon."
 
 def get_URL(url):
 	#need to set a timeout
